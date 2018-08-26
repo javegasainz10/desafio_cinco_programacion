@@ -1,10 +1,16 @@
 function includesText(text, completeText) {
     var checkPar1 = typeof text === 'number';
     var checkPar2 = typeof completeText === 'number';
-    
-    var compare = completeText.indexOf(text);
 
-    var boolean
+    var textS = String(text);
+    var completeTextS = String(completeText);
+
+    var textMayus = textS.toUpperCase();
+    var completeTextMayus = completeTextS.toUpperCase();
+    
+    var compare = completeTextMayus.indexOf(textMayus);
+
+    var boolean;
 
     if (compare >= 0) {
         boolean = true;
@@ -14,9 +20,9 @@ function includesText(text, completeText) {
         boolean = false;
     }
 
-    return boolean
+    return boolean;
 }
 
-var result = includesText(2, 'Patricia');
+var result = includesText(prompt('Ingrese el primer valor a comparar contra el segundo.'), prompt('Ingrese el segundo valor contra el cual el primero sera comparado.'));
 
-console.log(result);
+alert(result);
